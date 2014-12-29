@@ -9,11 +9,25 @@
  * @license MIT
  */
 
-class Reminder {
-  public $string;
-  boolean $result;
+class Classify {
+  public $sentence;
+  public $result = array();
 
-  public function check($string) {
+  function __construct($sentence) {
+    $this->sentence = $sentence;
+    check_reminder($sentence);
+    check_sports($sentence);
+    check_academics($sentence);
+    check_exam($sentence);
+    check_fee($sentence);
+    check_hostel($sentence);
+    check_lecture($sentence);
+    check_art($sentence);
+    check_missing($sentence);
+    check_announcement($sentence);
+  }
+
+  public function check_reminder($sentence) {
   }
 }
 

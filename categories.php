@@ -10,7 +10,7 @@
  */
 
 $categories = array();
-array_push("reminder","academic","hostel","fee","exam","sports","lecture");
+array_push("reminder","art","missing","academic","hostel","fee","exam","sports","lecture");
 
 ?>
 
