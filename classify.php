@@ -47,7 +47,7 @@ class classify {
     if(sizeof($split_sentence) > 3) {
       return true;
     } else {
-      return false
+      return false;
     }
   }
 

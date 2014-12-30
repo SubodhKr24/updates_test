@@ -10,6 +10,7 @@
  */
 
 require_once('classify.php');
+require_once('get_categories.php');
 
 $sentence = "<div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div><font size='4'><span style='font-family:trebuchet ms,sans-serif'>Dear all,<br></span></font></div><span style='font-family:courier new,monospace'><font size='4'><span style='font-family:trebuchet ms,sans-serif'>Â Â Â Â Â Â Â Â  <br>
   
@@ -21,7 +22,7 @@ $sentence = "<div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div di
 </b></font></font></span></div><span style='font-family:arial,helvetica,sans-serif'><font><font><b>Ph: +91-9444005772.</b></font></font></span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
 ";
 
-$classification = new classify($sentence);
+$classification = new classify($sentence,$categories);
 
 ?>
 
