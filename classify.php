@@ -28,7 +28,7 @@ class classify {
   }
 
   public function check_reminder($sentence) {
-    $split_sentence = preg_split("<[^<>@]*>",$sentence);
+    $split_sentence = preg_split("/<[^<>@]*>/",$sentence);
     for($x = 0; $x < sizeof($split_sentence); $x++) {
       echo $split_sentence[$x];
     }

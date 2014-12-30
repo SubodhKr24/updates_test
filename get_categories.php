@@ -10,6 +10,7 @@
  */
 
 $categories = array();
+$myfile = fopen("categories.php","r");
 array_push("reminder","art","missing","academic","hostel","fee","exam","sports","lecture");
 
 ?>
