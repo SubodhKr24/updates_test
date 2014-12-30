@@ -10,7 +10,7 @@
  */
 
 require_once('classify.php');
-require_once('get_categories.php');
+include 'get_categories.php';
 
 $sentence = "<div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div><font size='4'><span style='font-family:trebuchet ms,sans-serif'>Dear all,<br></span></font></div><span style='font-family:courier new,monospace'><font size='4'><span style='font-family:trebuchet ms,sans-serif'>Â Â Â Â Â Â Â Â  <br>
   

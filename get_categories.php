@@ -35,7 +35,7 @@ for ($i = 0; $i < sizeof($components); $i++) {
   }
 }
 
-fclose("categories");
+fclose($myfile);
 
 ?>
 
