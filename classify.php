@@ -22,7 +22,7 @@ class classify {
   public $result = array();
 
   //constructor function, where the variables are set and the check function is called.
-  function __construct($sentence,$categories) {
+  function __construct($sentence) {
     $this->sentence = $sentence;
     $this->categories = $this->get_categories();
     $this->check();
@@ -32,10 +32,10 @@ class classify {
   //the function which checks for every category match.
   public function check() {
     for ($x = 0; $x < sizeof($this->categories); $x++) {
-      $values = preg_split("/,/",$categories[$x][1]);
+      $values = preg_split("/,/",$this->categories[$x][1]);
       for ($y = 0; $y < sizeof($values); $y++) {
-        if(preg_match($values[$y],$this->sentence)) {
-          array_push($result,$categories[$x][0]);
+        if(preg_match("/$values[$y]/",$this->sentence)) {
+          array_push($this->result,$this->categories[$x][0]);
           break;
         }
       }
@@ -55,14 +55,15 @@ class classify {
   //printing out the result array, for testing purposes.
   public function print_result() {
     for ($x = 0; $x < sizeof($this->result); $x++) {
-      echo $result[$x];
+      echo $this->result[$x];
+      echo "\n";
     }
   }
 
   public function get_categories() {
 
     //Initializing categories array, containing the categories along with their keys.
-    $categories = array();
+    $categories_array = array();
 
     //open file categories to read all the categories from there.
     $myfile = fopen("categories","r");
@@ -80,10 +81,7 @@ class classify {
     for ($i = 0; $i < sizeof($components); $i++) {
       if($components[$i] != "") {
         $intermediate = preg_split("/=/",$components[$i]);
-        array_push($categories,$intermediate);
-      }
-      else {
-        continue;
+        array_push($categories_array,$intermediate);
       }
     }
 
@@ -91,7 +89,7 @@ class classify {
     fclose($myfile);
 
     //return the categories array with the final list of keys and values.
-    return $categories;
+    return $categories_array;
   }
 
 }
