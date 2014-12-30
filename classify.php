@@ -30,9 +30,24 @@ class classify {
 
   //the function which checks for every category match.
   public function check() {
-    $split_sentence = preg_split("/<[^<>@]*>/",$sentence);
-    for($x = 0; $x < sizeof($split_sentence); $x++) {
-      echo $split_sentence[$x];
+    for ($x = 0; $x < sizeof($this->categories); $x++) {
+      $values = preg_split("/,/",$categories[$x][1]);
+      for ($y = 0; $y < sizeof($values); $y++) {
+        if(preg_match($values[$y],$this->sentence)) {
+          array_push($result,$categories[$x][0]);
+          break;
+        }
+      }
+    }
+  }
+
+  //checking if the sentence is a html sentence.
+  public function check_html() {
+    $split_sentence = preg_split("/<[^<>@]*>/",$this->sentence);
+    if(sizeof($split_sentence) > 3) {
+      return true;
+    } else {
+      return false
     }
   }
 
