@@ -12,6 +12,7 @@
 require_once('classify.php');
 include 'get_categories.php';
 
+$categories = get_categories();
 $sentence = "<div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div><font size='4'><span style='font-family:trebuchet ms,sans-serif'>Dear all,<br></span></font></div><span style='font-family:courier new,monospace'><font size='4'><span style='font-family:trebuchet ms,sans-serif'>Â Â Â Â Â Â Â Â  <br>
   
   Â  The list ofÂ  MS/Ph.D seminar talks in the next week is</span> </font></span><span style='font-family:arial,sans-serif;font-size:13px'><font size='4'>attached here.Â  Interested Scholars can attend.</font></span><span style='font-family:arial,sans-serif;font-size:13px'><span style='font-family:arial,sans-serif;font-size:13px'></span> <br>
