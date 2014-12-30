@@ -24,8 +24,9 @@ class classify {
   //constructor function, where the variables are set and the check function is called.
   function __construct($sentence,$categories) {
     $this->sentence = $sentence;
-    $this->categories = $categories;
+    $this->categories = $this->get_categories();
     $this->check();
+    $this->print_result();
   }
 
   //the function which checks for every category match.
@@ -56,6 +57,41 @@ class classify {
     for ($x = 0; $x < sizeof($this->result); $x++) {
       echo $result[$x];
     }
+  }
+
+  public function get_categories() {
+
+    //Initializing categories array, containing the categories along with their keys.
+    $categories = array();
+
+    //open file categories to read all the categories from there.
+    $myfile = fopen("categories","r");
+
+    //read everything from the file into the variable for further processing.
+    $filecontents = fread($myfile,filesize("categories"));
+
+    //splitting the file contents based on line break. Each new line indicates a new category.
+    $components = explode(PHP_EOL,$filecontents);
+
+    //var_dump($components);
+    //array_push("reminder","art","missing","academic","hostel","fee","exam","sports","lecture");
+
+    //from each category, separate out the key value pairs and push to the categories array.
+    for ($i = 0; $i < sizeof($components); $i++) {
+      if($components[$i] != "") {
+        $intermediate = preg_split("/=/",$components[$i]);
+        array_push($categories,$intermediate);
+      }
+      else {
+        continue;
+      }
+    }
+
+    //close the file connection after the categories are obtained.
+    fclose($myfile);
+
+    //return the categories array with the final list of keys and values.
+    return $categories;
   }
 
 }
