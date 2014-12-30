@@ -21,7 +21,7 @@ $sentence1 = "<div dir='ltr'><div dir='ltr'><div dir='ltr'><div dir='ltr'><div d
 </b></font></font></span></div><span style='font-family:arial,helvetica,sans-serif'><font><font><b>Ph: +91-9444005772.</b></font></font></span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
 ";
 
-$sentence2 = "re academic";
+$sentence2 = "are academic";
 
 $classification = new classify($sentence2);
 

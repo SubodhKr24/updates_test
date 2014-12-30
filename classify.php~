@@ -40,7 +40,7 @@ class classify {
         }
       }
     }
-    if(sizeof($this->result) == 0){
+    if(sizeof($this->result == 0)){
       array_push($this->result,"others");
     }
   }
