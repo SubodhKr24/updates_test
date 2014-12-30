@@ -51,6 +51,13 @@ class classify {
     }
   }
 
+  //printing out the result array, for testing purposes.
+  public function print_result() {
+    for ($x = 0; $x < sizeof($this->result); $x++) {
+      echo $result[$x];
+    }
+  }
+
 }
 
 ?>
