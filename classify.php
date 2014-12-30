@@ -9,27 +9,27 @@
  * @license MIT
  */
 
-class Classify {
+class classify {
   public $sentence;
   public $result = array();
 
   function __construct($sentence) {
     $this->sentence = $sentence;
-    check_reminder($sentence);
-    check_sports($sentence);
-    check_academics($sentence);
-    check_exam($sentence);
-    check_fee($sentence);
-    check_hostel($sentence);
-    check_lecture($sentence);
-    check_art($sentence);
-    check_missing($sentence);
-    check_announcement($sentence);
+    $this->check_reminder($sentence);
+    $this->check_sports($sentence);
+    $this->check_academics($sentence);
+    $this->check_exam($sentence);
+    $this->check_fee($sentence);
+    $this->check_hostel($sentence);
+    $this->check_lecture($sentence);
+    $this->check_art($sentence);
+    $this->check_missing($sentence);
+    $this->check_announcement($sentence);
   }
 
   public function check_reminder($sentence) {
-    $split_sentence = preg_split("<[^<>]*>",$sentence);
-    for($x = 0; $x < $split_sentence.sizeof(); $x++) {
+    $split_sentence = preg_split("<[^<>@]*>",$sentence);
+    for($x = 0; $x < sizeof($split_sentence); $x++) {
       echo $split_sentence[$x];
     }
   }
