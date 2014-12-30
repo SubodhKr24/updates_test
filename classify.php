@@ -9,65 +9,31 @@
  * @license MIT
  */
 
+//class to contain methods to categorize a given string into different categories.
 class classify {
+
+  //the string to be classified.
   public $sentence;
+
+  //the categories array which has all the key value pairs.
+  public $categories;  
+
+  //the result array, which will contain the list of categories the given string belongs to.
   public $result = array();
 
-  function __construct($sentence) {
+  //constructor function, where the variables are set and the check function is called.
+  function __construct($sentence,$categories) {
     $this->sentence = $sentence;
-    $this->check_reminder($sentence);
-    $this->check_sports($sentence);
-    $this->check_academics($sentence);
-    $this->check_exam($sentence);
-    $this->check_fee($sentence);
-    $this->check_hostel($sentence);
-    $this->check_lecture($sentence);
-    $this->check_art($sentence);
-    $this->check_missing($sentence);
-    $this->check_announcement($sentence);
+    $this->categories = $categories;
+    $this->check();
   }
 
-  public function check_reminder($sentence) {
+  //the function which checks for every category match.
+  public function check() {
     $split_sentence = preg_split("/<[^<>@]*>/",$sentence);
     for($x = 0; $x < sizeof($split_sentence); $x++) {
       echo $split_sentence[$x];
     }
-  }
-
-  public function check_sports($sentence){
-  //nothing here yet...
-  }
-
-  public function check_academics($sentence){
-  //nothing here yet...
-  }
-  
-  public function check_exam($sentence){
-  //nothing here yet...
-  }
-  
-  public function check_fee($sentence){
-  //nothing here yet...
-  }
-  
-  public function check_hostel($sentence){
-  //nothing here yet...
-  }
-
-  public function check_lecture($sentence){
-  //nothing here yet...
-  }
-
-  public function check_art($sentence){
-  //nothing here yet...
-  }
-
-  public function check_missing($sentence){
-  //nothing here yet...
-  }
-
-  public function check_announcement($sentence){
-  //nothing here yet...
   }
 
 }
